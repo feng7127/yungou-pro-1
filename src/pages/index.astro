@@ -1,17 +1,79 @@
 ---
-
+import DesktopHome from "../components/home/DesktopHome.astro";
+import MobileHome from "../components/home/MobileHome.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="盈云购系统源码展示官网，展示海外云购、一元夺宝、活动营销、商品列表、开奖揭晓和移动端页面效果。" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>盈云购系统源码展示官网</title>
+  </head>
+  <body>
+    <DesktopHome />
+    <MobileHome />
+    <script>
+      const copyButtons = document.querySelectorAll<HTMLButtonElement>("[data-copy]");
+      copyButtons.forEach((button) => {
+        button.addEventListener("click", async () => {
+          const value = button.dataset.copy || "";
+          const feedback = document.getElementById(button.dataset.feedback || "");
+          try {
+            await navigator.clipboard.writeText(value);
+            if (feedback) feedback.textContent = `微信号已复制：${value}`;
+          } catch {
+            if (feedback) feedback.textContent = `微信号：${value}`;
+          }
+        });
+      });
+
+      const menuButton = document.querySelector<HTMLButtonElement>("[data-menu-open]");
+      const menuDialog = document.querySelector<HTMLElement>("[data-menu-dialog]");
+      const menuClose = document.querySelector<HTMLButtonElement>("[data-menu-close]");
+      const menuLinks = document.querySelectorAll<HTMLAnchorElement>("[data-menu-link]");
+      let lastFocusedElement: HTMLElement | null = null;
+      const closeMenu = () => {
+        if (!menuDialog) return;
+        menuDialog.hidden = true;
+        menuButton?.setAttribute("aria-expanded", "false");
+        lastFocusedElement?.focus();
+      };
+      const openMenu = () => {
+        if (!menuDialog) return;
+        lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+        menuDialog.hidden = false;
+        menuButton?.setAttribute("aria-expanded", "true");
+        requestAnimationFrame(() => menuClose?.focus());
+      };
+      menuButton?.addEventListener("click", openMenu);
+      menuClose?.addEventListener("click", closeMenu);
+      menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
+      document.addEventListener("keydown", (event) => {
+        if (!menuDialog || menuDialog.hidden) return;
+        if (event.key === "Escape") { event.preventDefault(); closeMenu(); return; }
+        if (event.key !== "Tab") return;
+        const focusable = [...menuDialog.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')];
+        const first = focusable[0];
+        const last = focusable.at(-1);
+        if (!first || !last) return;
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      });
+    </script>
+  </body>
 </html>
+
+<style is:global>
+  :root { color-scheme:light; font-family:"PingFang SC","Microsoft YaHei",ui-sans-serif,system-ui,sans-serif; scroll-behavior:smooth; background:#f3f8ff; }
+  body { margin:0; background:#f3f8ff; }
+  .mobile-home { display:none; }
+
+  @media (max-width:1024px) {
+    .desktop-home { display:none; }
+    .mobile-home { display:block; }
+  }
+</style>
