@@ -29,6 +29,7 @@ import footerTelegram from "../assets/home/icons/footer-telegram.png";
 import footerWechat from "../assets/home/icons/footer-wechat.png";
 import footerFeatures from "../assets/home/icons/footer-feature-list.png";
 import footerPricing from "../assets/home/icons/footer-pricing.png";
+import complianceShield from "../assets/home/icons/compliance-shield.png";
 
 export interface Feature {
   name: string;
@@ -61,6 +62,7 @@ export const assets = {
   footerWechat,
   footerFeatures,
   footerPricing,
+  complianceShield,
 };
 
 export const features: Feature[] = [
