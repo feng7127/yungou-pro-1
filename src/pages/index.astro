@@ -31,6 +31,11 @@ import MobileHome from "../components/home/MobileHome.astro";
         });
       });
 
+      const desktopNav = document.querySelector<HTMLElement>(".desktop-home .nav");
+      const updateDesktopNav = () => desktopNav?.classList.toggle("is-sticky", window.scrollY >= 18);
+      updateDesktopNav();
+      window.addEventListener("scroll", updateDesktopNav, { passive: true });
+
       const menuButton = document.querySelector<HTMLButtonElement>("[data-menu-open]");
       const menuDialog = document.querySelector<HTMLElement>("[data-menu-dialog]");
       const menuClose = document.querySelector<HTMLButtonElement>("[data-menu-close]");
