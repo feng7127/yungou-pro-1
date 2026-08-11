@@ -6,7 +6,7 @@ import demoClassic from "../assets/home/images/demo-classic.png";
 import demoFresh from "../assets/home/images/demo-fresh.png";
 import scenePreview from "../designs/images/scene-preview.png";
 import dashboardPreview from "../designs/images/dashboard-preview.png";
-import brandIcon from "../assets/home/icons/brand.png";
+import brand from "../assets/home/icons/brand.svg";
 import featureLanguage from "../assets/home/icons/feature-language.png";
 import featureTrophy from "../assets/home/icons/feature-trophy.png";
 import featureProductList from "../assets/home/icons/feature-product-list.png";
@@ -26,11 +26,10 @@ import growthRetention from "../assets/home/icons/growth-retention.png";
 import growthCampaign from "../assets/home/icons/growth-campaign.png";
 import menuIcon from "../assets/home/icons/menu.png";
 import footerTelegram from "../assets/home/icons/footer-telegram.png";
-import footerWechat from "../assets/home/icons/footer-wechat.png";
+import footerQQ from "../assets/home/icons/QQ.png";
 import footerFeatures from "../assets/home/icons/footer-feature-list.png";
 import footerPricing from "../assets/home/icons/footer-pricing.png";
 import complianceShield from "../assets/home/icons/compliance-shield.png";
-
 export interface Feature {
   name: string;
   mobileName: string;
@@ -48,7 +47,8 @@ export interface Demo {
 export interface Package {
   name: string;
   price: string;
-  usdtPrice: string;
+  description: string;
+  badge?: string;
   features: string[];
 }
 
@@ -56,11 +56,11 @@ export const assets = {
   appHome,
   scenePreview,
   dashboardPreview,
-  brandIcon,
+  brand,
   menuIcon,
   footerTelegram,
-  footerWechat,
   footerFeatures,
+  footerQQ,
   footerPricing,
   complianceShield,
 };
@@ -86,16 +86,32 @@ export const demos: Demo[] = [
 ];
 
 export const packages: Package[] = [
-  { name: "基础版", price: "¥3800", usdtPrice: "约 560 USDT", features: ["官网首页", "功能展示", "演示入口"] },
-  { name: "标准版", price: "¥6800", usdtPrice: "约 980 USDT", features: ["完整官网", "价格套餐", "移动端转化"] },
-  { name: "科技版", price: "¥8800", usdtPrice: "约 1290 USDT", features: ["品牌视觉", "数据看板", "活动组件"] },
+  {
+    name: "推广合作",
+    price: "免费部署",
+    description: "具备推广团队，购买我们的服务器即可合作",
+    badge: "零部署费",
+    features: ["标准系统部署", "基础上线支持", "推广团队负责市场"],
+  },
+  {
+    name: "额外定制",
+    price: "单独计费",
+    description: "超出标准系统范围的需求，评估后单独报价",
+    features: ["功能需求调整", "页面与流程定制", "按实际工作量报价"],
+  },
+  {
+    name: "技术维护运营",
+    price: "盈利 20%",
+    description: "由技术团队参与维护运营，按项目实际盈利分成",
+    features: ["技术维护支持", "项目运营配合", "收取盈利的 20%"],
+  },
 ];
 
 export const addOnServices = [
-  ["页面定制", "¥1200 / 168 USDT"],
-  ["APP 页面适配", "¥1600 / 224 USDT"],
-  ["多语言文案整理", "¥600 / 84 USDT"],
-  ["品牌视觉调整", "¥100 / 14 USDT 起"],
+  ["合作条件", "具备可落地的推广团队"],
+  ["服务器费用", "购买并使用我们的服务器"],
+  ["额外需求", "定制与功能调整单独计费"],
+  ["维护运营", "按项目实际盈利的 20% 收费"],
 ] as const;
 
 export const scenes = [
