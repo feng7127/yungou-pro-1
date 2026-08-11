@@ -203,6 +203,10 @@ import ArticleStrip from "../components/home/ArticleStrip.astro";
     <DesktopHome />
     <MobileHome />
     <ArticleStrip />
+    <footer class="site-footer">
+      <b>盈云购系统</b>
+      <span>源码官网 / 前端展示 / 咨询转化</span>
+    </footer>
     <script>
       const copyButtons = document.querySelectorAll<HTMLElement>("[data-copy]");
       copyButtons.forEach((button) => {
@@ -243,37 +247,42 @@ import ArticleStrip from "../components/home/ArticleStrip.astro";
         });
       });
 
-      const sceneCards = document.querySelectorAll<HTMLElement>("[data-scene-card]");
-      const clearActiveScene = () => sceneCards.forEach((card) => card.classList.remove("active"));
-      sceneCards.forEach((card) => {
-        card.addEventListener("mouseenter", () => {
-          clearActiveScene();
-          card.classList.add("active");
+      const sceneLists = document.querySelectorAll<HTMLElement>("[data-scene-list]");
+      sceneLists.forEach((sceneList) => {
+        const sceneCards = [
+          ...sceneList.querySelectorAll<HTMLElement>("[data-scene-card]"),
+        ];
+        if (!sceneCards.length) return;
+        const DEFAULT_SCENE = 3;
+        const clearActiveScene = () =>
+          sceneCards.forEach((card) => card.classList.remove("active"));
+        const restoreDefaultScene = () =>
+          sceneCards.forEach((card, index) =>
+            card.classList.toggle("active", index === DEFAULT_SCENE),
+          );
+        sceneCards.forEach((card) => {
+          card.addEventListener("mouseenter", () => {
+            clearActiveScene();
+            card.classList.add("active");
+          });
+          card.addEventListener("focusin", () => {
+            clearActiveScene();
+            card.classList.add("active");
+          });
+          card.addEventListener("click", () => {
+            clearActiveScene();
+            card.classList.add("active");
+          });
         });
-        card.addEventListener("mouseleave", () => card.classList.remove("active"));
-      });
-
-      const demoLightbox = document.querySelector<HTMLDialogElement>("[data-demo-lightbox]");
-      const demoLightboxImage = demoLightbox?.querySelector<HTMLImageElement>("[data-demo-lightbox-image]");
-      const demoLightboxBackdrop = demoLightbox?.querySelector<HTMLImageElement>("[data-demo-lightbox-backdrop]");
-      const demoLightboxTitle = demoLightbox?.querySelector<HTMLElement>("[data-demo-lightbox-title]");
-      const demoOpenButtons = document.querySelectorAll<HTMLButtonElement>("[data-demo-open]");
-      const demoCloseButton = demoLightbox?.querySelector<HTMLButtonElement>("[data-demo-close]");
-      demoOpenButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          if (!demoLightbox || !demoLightboxImage || !demoLightboxBackdrop || !demoLightboxTitle) return;
-          const title = button.dataset.demoTitle || "完整页面预览";
-          const imageSrc = button.dataset.demoSrc || "";
-          demoLightboxImage.src = imageSrc;
-          demoLightboxBackdrop.src = imageSrc;
-          demoLightboxImage.alt = `${title}完整页面预览`;
-          demoLightboxTitle.textContent = title;
-          demoLightbox.showModal();
+        sceneList.addEventListener("mouseleave", restoreDefaultScene);
+        sceneList.addEventListener("focusout", (event) => {
+          if (
+            !(event.relatedTarget instanceof Node) ||
+            !sceneList.contains(event.relatedTarget)
+          ) {
+            restoreDefaultScene();
+          }
         });
-      });
-      demoCloseButton?.addEventListener("click", () => demoLightbox?.close());
-      demoLightbox?.addEventListener("click", (event) => {
-        if (event.target === demoLightbox) demoLightbox.close();
       });
 
       const menuButton = document.querySelector<HTMLButtonElement>("[data-menu-open]");
@@ -317,8 +326,37 @@ import ArticleStrip from "../components/home/ArticleStrip.astro";
   body { margin:0; background:#f3f8ff; }
   .mobile-home { display:none; }
 
-  @media (max-width:1024px) {
+  @media (prefers-reduced-motion:reduce) {
+    :root { scroll-behavior:auto; }
+  }
+
+  .site-footer {
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    width:min(calc(100% - 160px),1440px);
+    margin-inline:auto;
+    padding:40px 0 30px;
+    color:#7b879d;
+    font-size:14px;
+  }
+  .site-footer b { color:#151a24; font-size:16px; }
+
+  @media (max-width:1180px) {
+    .site-footer { width:min(calc(100% - 80px),1080px); }
+  }
+
+  @media (max-width:768px) {
     .desktop-home { display:none; }
     .mobile-home { display:block; }
+    .site-footer {
+      flex-direction:column;
+      gap:5px;
+      width:calc(100% - 32px);
+      padding:25px 0 calc(15px + 82px + env(safe-area-inset-bottom));
+      color:#7b8ba3;
+      font-size:11px;
+    }
+    .site-footer b { color:#10213b; font-size:13px; }
   }
 </style>

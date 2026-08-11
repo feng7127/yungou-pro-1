@@ -38,7 +38,7 @@ import {
           展示商品夺宝、开奖揭晓、购物车页面、活动营销、多语言视觉和移动端界面效果。
         </p>
         <div class="hero-actions">
-          <a class="button secondary" href="#pc-demo">查看演示</a><a
+          <a class="button primary" href="#pc-demo">查看演示</a><a
             class="button secondary"
             href="#pc-packages">了解合作</a
           ><a class="button ghost" href="#pc-contact">联系客服</a>
@@ -57,6 +57,7 @@ import {
             src={assets.appHome.src}
             alt="盈云购移动端页面预览"
             loading="eager"
+            fetchpriority="high"
           />
         </div>
       </div>
@@ -181,7 +182,7 @@ import {
         </p>
       </div>
       <div class="preview-grid">
-        <div class="scene-list">
+        <div class="scene-list" data-scene-list>
           <img
             class="scene-image"
             src={assets.scenePreview.src}
@@ -189,7 +190,7 @@ import {
             loading="lazy"
           />{
             scenes.map(([icon, name, description], index) => (
-              <article class:list={["scene", { active: index === 3 }]}>
+              <article class:list={["scene", { active: index === 3 }]} data-scene-card tabindex="0">
                 <>
                   <img src={icon.src} alt="" loading="lazy" />
                   <div>
@@ -309,7 +310,6 @@ import {
       </section>
     </section>
   </main>
-  <footer><b>盈云购系统</b><span>源码官网 / 前端展示 / 咨询转化</span></footer>
 </div>
 
 <style>
@@ -318,7 +318,6 @@ import {
     --cyan: #38bdf8;
     --line: #d9e8ff;
     --ink: #151a24;
-    --muted: #6b7a90;
     position: relative;
     overflow: hidden;
     background: linear-gradient(180deg, #eaf4ff 0, #fff 54%);
@@ -387,8 +386,7 @@ import {
   }
   .nav,
   .hero-content,
-  .section,
-  .desktop-home footer {
+  .section {
     width: min(calc(100% - 160px), 1440px);
     margin-inline: auto;
   }
@@ -444,8 +442,7 @@ import {
     font-size: 15px;
     font-weight: 800;
   }
-  .nav-links a:hover,
-  .nav-links .active {
+  .nav-links a:hover {
     color: var(--blue);
   }
   .nav-cta,
@@ -719,94 +716,11 @@ import {
   }
   .demo-body img {
     width: 100%;
-    border-radius: 14px;
-    object-fit: contain;
-    background: #eaf4ff;
-  }
-  .demo-media {
-    position: relative;
-    display: grid;
-    width: 100%;
     aspect-ratio: 11 / 6;
-    place-items: center;
-    padding: 0;
-    margin-top: 16px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    background: #eaf4ff;
-    cursor: zoom-in;
-    isolation: isolate;
-  }
-  .demo-media.portrait {
-    height: 560px;
-    aspect-ratio: auto;
-  }
-  .demo-media::after {
-    position: absolute;
-    z-index: 3;
-    top: -35%;
-    left: -55%;
-    width: 34%;
-    height: 170%;
-    content: "";
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.5),
-      transparent
-    );
-    opacity: 0;
-    pointer-events: none;
-    transform: rotate(16deg);
-  }
-  .demo:hover .demo-media::after {
-    animation: demo-shine 0.9s ease;
-  }
-  .demo-backdrop {
-    position: absolute;
-    z-index: 0;
-    inset: -18px;
-    width: calc(100% + 36px);
-    height: calc(100% + 36px);
+    border-radius: 14px;
     object-fit: cover;
-    opacity: 0.24;
-    filter: blur(18px) saturate(1.18);
-    transform: scale(1.08);
-    transition: transform 0.6s ease;
-  }
-  .demo-preview-image {
-    position: relative;
-    z-index: 1;
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 14px;
-    object-fit: contain;
-    object-position: center;
-    filter: drop-shadow(0 14px 22px rgba(10, 55, 120, 0.2));
-    transition: transform 0.55s cubic-bezier(0.2, 0.75, 0.25, 1);
-  }
-  .demo:hover .demo-backdrop {
-    transform: scale(1.16);
-  }
-  .demo:hover .demo-preview-image {
-    transform: scale(1.025);
-  }
-  .demo-media > span {
-    position: absolute;
-    z-index: 2;
-    right: 12px;
-    bottom: 12px;
-    padding: 6px 10px;
-    border: 1px solid rgba(255, 255, 255, 0.72);
-    border-radius: 999px;
-    color: #29527e;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 6px 16px rgba(15, 55, 119, 0.1);
-    backdrop-filter: blur(8px);
-    font-size: 11px;
-    font-weight: 800;
+    object-position: top;
+    background: #eaf4ff;
   }
   .demo-body {
     display: grid;
@@ -846,115 +760,6 @@ import {
     color: var(--blue);
     border: 1px solid var(--line);
     background: #fff;
-  }
-  .demo-lightbox {
-    width: min(94vw, 1280px);
-    max-width: none;
-    max-height: 94vh;
-    padding: 0;
-    overflow: visible;
-    border: 0;
-    border-radius: 26px;
-    background: transparent;
-    color: var(--ink);
-  }
-  .demo-lightbox[open] {
-    animation: demo-dialog-in 0.24s ease both;
-  }
-  .demo-lightbox::backdrop {
-    background: rgba(3, 14, 34, 0.78);
-    backdrop-filter: blur(9px);
-    animation: demo-backdrop-in 0.24s ease both;
-  }
-  .demo-lightbox-panel {
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    border-radius: 26px;
-    background: #f7fbff;
-    box-shadow: 0 34px 90px rgba(0, 18, 55, 0.42);
-  }
-  .demo-lightbox-panel > header {
-    display: flex;
-    height: 66px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 0 18px 0 24px;
-    border-bottom: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.94);
-  }
-  .demo-lightbox-panel > header strong {
-    font-size: 18px;
-  }
-  .demo-lightbox-panel > header button {
-    display: grid;
-    width: 38px;
-    height: 38px;
-    place-items: center;
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    color: #36516f;
-    background: #e7f2ff;
-    cursor: pointer;
-    font-size: 26px;
-    line-height: 1;
-    transition:
-      color 0.2s ease,
-      background 0.2s ease,
-      transform 0.2s ease;
-  }
-  .demo-lightbox-panel > header button:hover {
-    color: #fff;
-    background: var(--blue);
-    transform: rotate(8deg);
-  }
-  .demo-lightbox-media {
-    display: grid;
-    height: calc(94vh - 66px);
-    max-height: 820px;
-    place-items: center;
-    padding: 22px;
-    overflow: auto;
-    background: radial-gradient(circle at 50% 25%, #fff, #eaf4ff 72%);
-  }
-  .demo-lightbox-media img {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 20px 32px rgba(10, 55, 120, 0.2));
-  }
-  @keyframes demo-shine {
-    0% {
-      left: -55%;
-      opacity: 0;
-    }
-    25% {
-      opacity: 1;
-    }
-    100% {
-      left: 125%;
-      opacity: 0;
-    }
-  }
-  @keyframes demo-dialog-in {
-    from {
-      opacity: 0;
-      transform: translateY(18px) scale(0.975);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  @keyframes demo-backdrop-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
   .package-grid {
     display: grid;
@@ -1088,6 +893,16 @@ import {
     border-radius: 20px;
     background: #fff;
     box-shadow: 0 10px 24px rgba(15, 55, 119, 0.04);
+    transition:
+      border-color 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease;
+    cursor: default;
+    outline: none;
+  }
+  .scene:focus-visible {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(11, 116, 255, 0.18);
   }
   .scene.active {
     border-color: var(--blue);
@@ -1186,16 +1001,6 @@ import {
   #pc-growth .heading {
     max-width: 860px;
     margin-bottom: 42px;
-  }
-  #pc-growth .heading > span {
-    display: block;
-    padding: 0;
-    border-radius: 0;
-    color: #0877ff;
-    background: transparent;
-    font-size: 16px;
-    font-weight: 800;
-    line-height: 1;
   }
   #pc-growth .heading h2 {
     margin-top: 18px !important;
@@ -1402,7 +1207,7 @@ import {
     object-fit: contain;
   }
   .contact-telegram,
-  .contact-wechat,
+  .contact-qq,
   .contact-features {
     gap: 8px;
     color: #fff;
@@ -1431,22 +1236,11 @@ import {
   .copy-feedback:not(:empty) {
     display: block;
   }
-  .desktop-home footer {
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 40px 0 30px;
-    color: #7b879d;
-  }
-  .desktop-home footer b {
-    color: var(--ink);
-  }
 
   @media (max-width: 1180px) {
     .nav,
     .hero-content,
     .section,
-    .desktop-home footer,
     .preview,
     .contact {
       width: min(calc(100% - 80px), 1080px);
@@ -1483,9 +1277,6 @@ import {
     .feature-grid {
       grid-template-columns: repeat(4, 1fr);
     }
-    .demo-media.portrait {
-      height: 500px;
-    }
     .preview .heading h2 {
       font-size: 42px;
     }
@@ -1503,7 +1294,7 @@ import {
     }
   }
 
-  @media (max-width: 1280px) and (min-width: 1025px) {
+  @media (max-width: 1280px) {
     .preview-grid {
       grid-template-columns: 1fr;
     }
@@ -1518,7 +1309,7 @@ import {
     }
   }
 
-  @media (max-width: 1720px) and (min-width: 1025px) {
+  @media (max-width: 1720px) {
     #pc-growth {
       width: calc(100% - 80px);
       margin-inline: auto;
@@ -1535,141 +1326,68 @@ import {
     }
   }
 
-  .demo-lightbox {
-    width: min(92vw, 1120px);
-    max-height: 90vh;
-    border-radius: 30px;
-  }
-  .demo-lightbox::backdrop {
-    background: rgba(2, 8, 20, 0.84);
-    backdrop-filter: blur(12px) saturate(0.8);
-  }
-  .demo-lightbox-panel {
-    position: relative;
-    padding: 14px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 30px;
-    background: rgba(6, 16, 32, 0.96);
-    box-shadow: 0 40px 110px rgba(0, 8, 28, 0.58);
-  }
-  .demo-lightbox-panel > header {
-    position: absolute;
-    z-index: 4;
-    top: 28px;
-    right: 28px;
-    left: 28px;
-    height: 64px;
-    padding: 0 12px 0 18px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 18px;
-    color: #fff;
-    background: rgba(4, 14, 30, 0.68);
-    box-shadow: 0 12px 30px rgba(0, 8, 24, 0.22);
-    backdrop-filter: blur(18px);
-  }
-  .demo-lightbox-panel > header > div {
-    display: grid;
-    gap: 3px;
-  }
-  .demo-lightbox-panel > header small {
-    color: rgba(255, 255, 255, 0.62);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-  }
-  .demo-lightbox-panel > header strong {
-    color: #fff;
-    font-size: 17px;
-  }
-  .demo-lightbox-panel > header button {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.12);
-  }
-  .demo-lightbox-panel > header button:hover {
-    background: #1681ff;
-  }
-  .demo-lightbox-media {
-    position: relative;
-    display: grid;
-    height: min(82vh, 780px);
-    max-height: none;
-    place-items: start center;
-    padding: 108px 32px 32px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 22px;
-    background: #071326;
-    scrollbar-color: rgba(111, 180, 255, 0.72) rgba(255, 255, 255, 0.08);
-    scrollbar-width: thin;
-    isolation: isolate;
-  }
-  .demo-lightbox-media::-webkit-scrollbar {
-    width: 8px;
-  }
-  .demo-lightbox-media::-webkit-scrollbar-track {
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
-  }
-  .demo-lightbox-media::-webkit-scrollbar-thumb {
-    border-radius: 999px;
-    background: rgba(111, 180, 255, 0.72);
-  }
-  .demo-lightbox-media::after {
-    position: absolute;
-    z-index: 1;
-    inset: 0;
-    content: "";
-    background:
-      linear-gradient(180deg, rgba(3, 11, 24, 0.2), rgba(3, 11, 24, 0.52)),
-      radial-gradient(circle at 50% 35%, transparent, rgba(2, 8, 20, 0.42) 78%);
-    pointer-events: none;
-  }
-  .demo-lightbox-media .demo-lightbox-backdrop {
-    position: absolute;
-    z-index: 0;
-    inset: -35px;
-    width: calc(100% + 70px);
-    max-width: none;
-    height: calc(100% + 70px);
-    max-height: none;
-    object-fit: cover;
-    opacity: 0.4;
-    filter: blur(28px) saturate(1.2);
-    transform: scale(1.08);
-  }
-  .demo-lightbox-media .demo-lightbox-image {
-    position: relative;
-    z-index: 2;
-    display: block;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: none;
-    align-self: start;
-    border-radius: 14px;
-    object-fit: contain;
-    filter: drop-shadow(0 24px 38px rgba(0, 0, 0, 0.42));
+  /* 768–1024px：桌面版保持显示（1024px 以下不再切移动版），收缩布局避免溢出 */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .nav {
+      padding-inline: 16px;
+    }
+    .nav-links {
+      gap: 12px;
+      font-size: 13px;
+    }
+    .nav-cta {
+      min-width: 104px;
+      height: 40px;
+    }
+    .brand img {
+      width: 34px;
+      height: 34px;
+    }
+    .brand span {
+      font-size: 16px;
+    }
+    .contact-buttons {
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 960px) {
+      .hero-content {
+        flex-direction: column;
+        justify-content: center;
+        gap: 34px;
+      }
+      .hero-copy {
+        width: 100%;
+      }
+      .hero-visual {
+        align-self: center;
+      }
+      .demo-body {
+        grid-template-columns: 1fr;
+      }
+      .demo-actions {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .package-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .demo,
-    .demo-backdrop,
-    .demo-preview-image,
-    .demo-actions a {
+    .demo-actions a,
+    .scene {
       transition: none;
     }
     .demo:hover {
       transform: none;
-    }
-    .demo:hover .demo-media::after {
-      animation: none;
-    }
-    .demo-lightbox[open],
-    .demo-lightbox::backdrop {
-      animation: none;
     }
   }
 </style>

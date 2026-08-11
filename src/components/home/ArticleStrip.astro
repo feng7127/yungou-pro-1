@@ -37,14 +37,18 @@ const articles = [
 
 <style>
   .article-strip {
+    --blue: #0b74ff;
     width: min(calc(100% - 160px), 1440px);
     margin: 26px auto 0;
   }
   .article-strip .heading span {
+    display: inline-flex;
+    padding: 5px 12px;
+    border-radius: 999px;
     color: var(--blue);
-    font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 0.1em;
+    background: #eaf4ff;
+    font-size: 13px;
+    font-weight: 800;
   }
   .article-strip .heading h2 {
     margin: 8px 0 0;
