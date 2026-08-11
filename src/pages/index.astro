@@ -8,26 +8,33 @@ import MobileHome from "../components/home/MobileHome.astro";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="盈云购系统源码，展示官网，展示海外云购、一元夺宝、活动营销、商品列表、开奖揭晓和移动端页面效果。" />
-    <meta name="keywords" content="盈云购,云购源码,一元夺宝,海外云购,活动营销系统,云购系统源码" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="description" content="盈云购系统源码展示官网：海外云购、一元夺宝、积分商城、大转盘抽奖、活动营销与开奖揭晓系统源码。含移动端页面、多语言视觉、价格套餐与咨询入口，支持定制开发。" />
+    <meta name="keywords" content="盈云购,云购源码,一元夺宝源码,海外云购,云购系统源码,抽奖系统源码,活动营销系统,一元购,夺宝系统,积分商城源码" />
     <link rel="canonical" href="https://www.yg518.com/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-    <title>盈云购系统源码展示 - 海外云购、一元夺宝、一元云购系统源码</title>
+    <link rel="alternate" hreflang="zh-CN" href="https://www.yg518.com/" />
+    <meta name="theme-color" content="#0B74FF" />
+    <title>盈云购系统源码展示官网 - 海外云购、一元夺宝、活动营销系统源码</title>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="盈云购" />
-    <meta property="og:title" content="盈云购系统源码展示官网" />
-    <meta property="og:description" content="盈云购系统源码，展示官网，展示海外云购、一元夺宝、活动营销、商品列表、开奖揭晓和移动端页面效果。" />
+    <meta property="og:title" content="盈云购系统源码展示官网 - 海外云购、一元夺宝、活动营销系统源码" />
+    <meta property="og:description" content="展示商品夺宝、开奖揭晓、购物车、活动营销、大转盘抽奖、多语言视觉和移动端界面效果，支持套餐购买与定制开发。" />
     <meta property="og:url" content="https://www.yg518.com/" />
     <meta property="og:locale" content="zh_CN" />
-    <meta property="og:image" content="https://www.yg518.com/favicon.svg" />
+    <meta property="og:image" content="https://www.yg518.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="盈云购系统源码展示官网" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="盈云购系统源码展示官网" />
-    <meta name="twitter:description" content="盈云购系统源码，展示官网，展示海外云购、一元夺宝、活动营销、商品列表、开奖揭晓和移动端页面效果。" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="盈云购系统源码展示官网 - 海外云购、一元夺宝、活动营销系统源码" />
+    <meta name="twitter:description" content="展示商品夺宝、开奖揭晓、购物车、活动营销、大转盘抽奖、多语言视觉和移动端界面效果，支持套餐购买与定制开发。" />
+    <meta name="twitter:image" content="https://www.yg518.com/og-image.png" />
 
     <!-- Structured data -->
     <script type="application/ld+json">
@@ -36,22 +43,157 @@ import MobileHome from "../components/home/MobileHome.astro";
         "@graph": [
           {
             "@type": "WebSite",
-            "name": "盈云购",
+            "name": "盈云购系统",
             "url": "https://www.yg518.com/",
-            "description": "盈云购系统源码，展示官网，展示海外云购、一元夺宝、活动营销、商品列表、开奖揭晓和移动端页面效果。",
-            "inLanguage": "zh-CN"
+            "description": "盈云购系统源码展示官网：海外云购、一元夺宝、活动营销系统源码，含前端页面、移动端效果与咨询转化入口。",
+            "inLanguage": "zh-CN",
+            "publisher": { "@id": "#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.yg518.com/#webpage",
+            "url": "https://www.yg518.com/",
+            "name": "盈云购系统源码展示官网",
+            "description": "展示商品夺宝、开奖揭晓、购物车页面、活动营销、多语言视觉和移动端界面效果，支持套餐购买与定制开发。",
+            "inLanguage": "zh-CN",
+            "isPartOf": { "@id": "https://www.yg518.com/#website" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.yg518.com/#organization",
+            "name": "盈云购系统",
+            "url": "https://www.yg518.com/",
+            "description": "提供海外云购、一元夺宝、活动营销类前端官网与系统源码展示服务。",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "availableLanguage": ["zh", "en"]
+            }
           },
           {
             "@type": "SoftwareApplication",
+            "@id": "https://www.yg518.com/#software",
             "name": "盈云购系统源码",
             "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Web",
-            "description": "支持海外云购、一元夺宝、活动营销、商品列表、开奖揭晓的云购系统源码，含桌面端与移动端页面。",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "CNY"
+            "operatingSystem": "Web, Mobile",
+            "inLanguage": ["zh-CN", "en", "multi"],
+            "description": "支持海外云购、一元夺宝、活动营销、商品列表、大转盘抽奖、开奖揭晓的云购系统源码，含桌面端与移动端页面。",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "基础版",
+                "price": "3800",
+                "priceCurrency": "CNY"
+              },
+              {
+                "@type": "Offer",
+                "name": "标准版",
+                "price": "6800",
+                "priceCurrency": "CNY"
+              },
+              {
+                "@type": "Offer",
+                "name": "科技版",
+                "price": "8800",
+                "priceCurrency": "CNY"
+              }
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": "0"
             }
+          },
+          {
+            "@type": "Product",
+            "name": "盈云购系统源码（云购/一元夺宝/活动营销前端官网）",
+            "description": "海外云购系统源码展示官网，覆盖商品夺宝、商品列表、购物车、开奖揭晓、大转盘抽奖、活动营销、会员积分与移动端页面。",
+            "brand": { "@type": "Brand", "name": "盈云购" },
+            "offers": {
+              "@type": "AggregateOffer",
+              "lowPrice": "3800",
+              "highPrice": "8800",
+              "priceCurrency": "CNY",
+              "offerCount": "3",
+              "availability": "https://schema.org/InStock",
+              "offers": [
+                {
+                  "@type": "Offer",
+                  "name": "基础版",
+                  "price": "3800",
+                  "priceCurrency": "CNY",
+                  "availability": "https://schema.org/InStock"
+                },
+                {
+                  "@type": "Offer",
+                  "name": "标准版",
+                  "price": "6800",
+                  "priceCurrency": "CNY",
+                  "availability": "https://schema.org/InStock"
+                },
+                {
+                  "@type": "Offer",
+                  "name": "科技版",
+                  "price": "8800",
+                  "priceCurrency": "CNY",
+                  "availability": "https://schema.org/InStock"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.yg518.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "云购系统源码包含哪些页面？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "覆盖核心前端页面场景：首页展示（搜索栏、轮播图、功能入口、商品卡片）、商品展示（商品详情、参与记录、进度条、状态标签）、活动展示（大转盘、限时揭晓、新品首发、专题活动）以及咨询转化入口（报价按钮、客服入口、联系方式复制）。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "支持多语言展示吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "支持。轻奢标准版提供多语言视觉与全球市场风格展示，另有经典基础版（单语言视觉）、奢享科技版（品牌化 UI）和新颖主题版（换肤展示）可供选择，也提供多语言文案整理增值服务。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "价格是多少，支持 USDT 支付吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "基础版 ¥3800（约 560 USDT）、标准版 ¥6800（约 980 USDT）、科技版 ¥8800（约 1290 USDT）。增值服务包括页面定制 ¥1200（168 USDT）、APP 页面适配 ¥1600（224 USDT）、多语言文案整理 ¥600（84 USDT）等。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "可以按需定制页面和视觉吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "可以。提供页面定制、APP 页面适配、多语言文案整理、品牌视觉调整等增值服务，前端制作流程为：需求确认、页面设计、页面制作、预览确认。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "如何联系咨询和获取报价？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "可通过 Telegram 咨询、复制微信联系客服，或直接点击网站内的获取报价按钮。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "页面是否包含后台运营系统？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "本网站以静态前端页面和交互展示为主，用于投放推广、产品介绍和对外演示；页面内容仅用于产品展示和方案介绍，实际业务运营前请自行确认当地关于抽奖、积分、营销活动、数据隐私等法规要求。"
+                }
+              }
+            ]
           }
         ]
       }
