@@ -5,5 +5,5 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.yg518.com',
-  integrations: [sitemap()],
+  integrations: [sitemap({ lastmod: new Date() })],
 });

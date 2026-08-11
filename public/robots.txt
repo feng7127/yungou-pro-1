@@ -23,4 +23,28 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+# China-based AI engines
+User-agent: Bytespider
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Other AI / LLM crawlers
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://www.yg518.com/sitemap-index.xml
