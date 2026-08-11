@@ -1,0 +1,134 @@
+# Yungou System (盈云购系统) — Full English Version
+
+> Official showcase website for the Yungou system source code: overseas lucky-buy ("1-yuan purchase"), one-coin draws, promotional campaigns, points mall, and prize-wheel lottery front-end source code. The site focuses on static front-end pages and interactive demos, covering product draws, product lists, shopping cart, draw result announcements, membership points, prize wheels, multilingual visuals, and mobile page views, with pricing plans, value-added services, and customer support contact options.
+
+## About this site
+
+- [Homepage / Yungou System Source Code Showcase](https://www.yg518.com/): shows overseas lucky-buy, one-coin draws, promotional campaigns, product lists, draw results, and mobile page previews.
+- [Feature showcase](https://www.yg518.com/#pc-features): multilingual display, product draws, product lists, shopping cart pages, latest draw results, campaign entries, membership styles, prize wheel pages, dashboard styles, and app page previews.
+- [Demo versions](https://www.yg518.com/#pc-demo): Light Luxury Standard (multilingual visuals, global-market style, flagship), Tech Premium (branded UI), Classic Basic (single-language visuals), and Fresh Theme (theme-switch showcase).
+- [Pricing plans](https://www.yg518.com/#pc-packages): Basic ¥3800 (~560 USDT), Standard ¥6800 (~980 USDT), Tech ¥8800 (~1290 USDT).
+- [Page previews](https://www.yg518.com/#pc-preview): four core page scenarios — home, product, campaign, and contact/conversion.
+- [FAQ](https://www.yg518.com/#pc-faq): page scope, multilingual support, pricing and payment, customization, and contact channels.
+- [Articles](https://www.yg518.com/articles/): in-depth guides on what a lucky-buy system is, how to choose an overseas lucky-buy system, and lottery marketing compliance.
+
+## Product overview
+
+The Yungou system is a set of front-end official-website source code for lucky-buy ("1-yuan purchase") and lottery-style platforms targeting overseas markets. It is built as static front-end pages with interactive demos, used for ad landing pages, product introductions, and client demos.
+
+**Key numbers**
+
+- 50+ core page scenarios
+- 4 demo theme versions (Light Luxury Standard, Tech Premium, Classic Basic, Fresh Theme)
+- Static front-end interaction showcase, no backend dependency
+
+**Core page modules (10)**
+
+1. Multilingual display: global-language visuals
+2. Product draws: progress and result announcements
+3. Product lists: category filtering and browsing
+4. Shopping cart pages: add-to-cart and checkout flows
+5. Latest results: draw status notifications
+6. Campaign entries: promotional campaign entry points
+7. Membership styles: points and benefits visuals
+8. Prize wheel pages: lottery gameplay pages
+9. Dashboard styles: operations data dashboard
+10. App page previews: mobile interface previews
+
+**Page scenario coverage**
+
+- Homepage: search bar, carousel, feature entries, product cards
+- Product pages: product details, participation records, progress bars, status tags
+- Campaign pages: prize wheel, flash draws, new-product launches, themed campaigns
+- Contact & conversion: quote buttons, support entry points, contact copy, toast prompts
+
+**Growth and retention showcase**
+
+- Growth: invite-and-reward pages, share poster styles, campaign entries
+- Retention: membership styles, points visuals, benefits cards
+- Campaigns: prize wheel, golden-egg smash, new-product launches, flash draws
+
+## Demo versions (4 themes)
+
+- Light Luxury Standard (flagship): multilingual visuals, global-market style
+- Tech Premium (advanced): stronger UI, suited to branded presentation
+- Classic Basic (solid): single-language visuals, clear structure
+- Fresh Theme (re-skin): suited to theme switching and differentiated presentation
+
+## Partnership plans and pricing
+
+### Promotional partnership
+
+- Price: free deployment (zero deployment fee)
+- Conditions: you have a promotion/marketing team and purchase our server
+- Includes: standard system deployment, basic go-live support; your team handles marketing
+
+### Additional customization
+
+- Price: quoted separately
+- Includes: feature adjustments, page and flow customization, priced by actual workload
+
+### Technical maintenance and operations
+
+- Price: 20% of profit
+- Includes: technical maintenance support, project operations assistance, 20% of project profit
+
+### Value-added services
+
+- Page customization: ¥1200 / 168 USDT
+- App page adaptation: ¥1600 / 224 USDT
+- Multilingual copy preparation: ¥600 / 84 USDT
+- Brand visual adjustments: ¥100 / 14 USDT and up
+
+### Partnership details
+
+- Requirement: a promotable marketing team
+- Server fee: purchase and use our server
+- Additional needs: customization and feature adjustments billed separately
+- Maintenance/operations: 20% of the project's actual profit
+
+## Customization process
+
+Requirements confirmation → page design → page production → preview confirmation
+
+## Articles
+
+- [What is a lucky-buy ("1-yuan purchase") system?](https://www.yg518.com/articles/what-is-yungou-system/): explains the gameplay, business model, and the pages a lucky-buy site needs, in plain language.
+- [How to choose an overseas lucky-buy system?](https://www.yg518.com/articles/how-to-choose-overseas-yungou-system/): a buying guide covering themes, multilingual support, pricing, and custom development.
+- [Lottery and lucky-buy marketing compliance essentials](https://www.yg518.com/articles/lottery-marketing-compliance/): key legal points to check before running draws, points, and promotional campaigns.
+
+## FAQ
+
+### Which pages are included in the lucky-buy system source code?
+
+The core front-end page scenarios are covered: homepage (search bar, carousel, feature entries, product cards), product pages (product details, participation records, progress bars, status tags), campaign pages (prize wheel, flash draws, new-product launches, themed campaigns), and contact/conversion entry points (quote buttons, support entries, contact copy).
+
+### Is multilingual display supported?
+
+Yes. The Light Luxury Standard version provides multilingual visuals with a global-market style. The Classic Basic version (single-language visuals), Tech Premium version (branded UI), and Fresh Theme version (theme switching) are also available, along with a multilingual copy preparation value-added service.
+
+### What are the prices, and is USDT accepted?
+
+Basic ¥3800 (~560 USDT), Standard ¥6800 (~980 USDT), Tech ¥8800 (~1290 USDT). Value-added services: page customization ¥1200 (168 USDT), app page adaptation ¥1600 (224 USDT), multilingual copy preparation ¥600 (84 USDT), brand visual adjustments from ¥100 (14 USDT).
+
+### Can pages and visuals be customized on demand?
+
+Yes. Value-added services include page customization, app page adaptation, multilingual copy preparation, and brand visual adjustments. The front-end production flow is: requirements confirmation, page design, page production, preview confirmation.
+
+### How do I contact you and get a quote?
+
+You can reach us via Telegram, copy the WeChat contact to message customer support, or click the quote button on the website.
+
+### Does the package include a backend operations system?
+
+This website is primarily static front-end pages and interactive displays for ad landing, product introduction, and demo purposes. The content is for product showcase and proposal introduction only. Before operating a real business, please verify the local regulations concerning lotteries, points, marketing campaigns, and data privacy.
+
+## Humans
+
+- Telegram support: @yyg88_bot (https://t.me/yyg88_bot )
+- QQ: 191064227 (one-click copy on the website)
+- WeChat: YunGouPro (see the contact entry on the website)
+
+## Compliance note
+
+The page content is for product showcase and proposal introduction only. Before operating a real business, please verify the local regulations concerning lotteries, points, marketing campaigns, and data privacy in your jurisdiction.

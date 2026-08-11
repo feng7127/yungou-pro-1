@@ -1,0 +1,113 @@
+---
+const articles = [
+  {
+    href: "/articles/what-is-yungou-system/",
+    title: "云购系统是什么？一文讲清玩法、商业模式与页面构成",
+    summary: "1 元购玩法规则、平台盈利模式与常见页面模块构成。",
+  },
+  {
+    href: "/articles/how-to-choose-overseas-yungou-system/",
+    title: "海外云购系统怎么选？从主题、多语言到价格的选购指南",
+    summary: "主题、多语言、移动端适配、价格与合作模式的选型建议。",
+  },
+  {
+    href: "/articles/lottery-marketing-compliance/",
+    title: "云购、抽奖与积分营销的合规要点：上线前必读",
+    summary: "抽奖类玩法的常见风险点与上线前自查清单。",
+  },
+];
+---
+
+<section class="article-strip" id="articles" aria-labelledby="articles-title">
+  <div class="heading">
+    <span>内容指南</span>
+    <h2 id="articles-title">相关文章，帮你把玩法与选型一次弄懂</h2>
+    <p>关于云购玩法、海外选型与合规要点，我们用文章一次讲清。</p>
+  </div>
+  <div class="article-grid">
+    {articles.map((article) => (
+      <a class="article-card" href={article.href}>
+        <b>{article.title}</b>
+        <p>{article.summary}</p>
+        <span>阅读全文 →</span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .article-strip {
+    width: min(calc(100% - 160px), 1440px);
+    margin: 26px auto 0;
+  }
+  .article-strip .heading span {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+  }
+  .article-strip .heading h2 {
+    margin: 8px 0 0;
+    font-size: 28px;
+    letter-spacing: -0.03em;
+  }
+  .article-strip .heading p {
+    margin: 10px 0 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+  }
+  .article-card {
+    display: block;
+    padding: 22px 24px;
+    border: 1px solid rgba(225, 237, 255, 0.9);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 12px 28px rgba(7, 83, 195, 0.06);
+    color: #14233b;
+    text-decoration: none;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .article-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(11, 116, 255, 0.45);
+  }
+  .article-card b {
+    display: block;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .article-card p {
+    margin: 10px 0 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .article-card span {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  @media (max-width: 1024px) {
+    .article-strip {
+      width: calc(100% - 40px);
+      margin: 22px auto 0;
+    }
+    .article-strip .heading h2 {
+      font-size: 22px;
+    }
+    .article-grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+</style>

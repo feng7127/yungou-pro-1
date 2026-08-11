@@ -1,6 +1,7 @@
 ---
 import DesktopHome from "../components/home/DesktopHome.astro";
 import MobileHome from "../components/home/MobileHome.astro";
+import ArticleStrip from "../components/home/ArticleStrip.astro";
 ---
 
 <!doctype html>
@@ -201,6 +202,7 @@ import MobileHome from "../components/home/MobileHome.astro";
   <body>
     <DesktopHome />
     <MobileHome />
+    <ArticleStrip />
     <script>
       const copyButtons = document.querySelectorAll<HTMLElement>("[data-copy]");
       copyButtons.forEach((button) => {
